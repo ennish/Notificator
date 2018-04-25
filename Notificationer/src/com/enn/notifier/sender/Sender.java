@@ -1,9 +1,9 @@
 package com.enn.notifier.sender;
 
-import com.enn.notifier.message.MessageInterface;
+import com.enn.notifier.message.Message;
 
-//使用该定时任务的外部方法应实现该接口
-public interface Sender {
+public abstract class Sender {
 	
-	void send(MessageInterface msgInterface);
+	public abstract String send(Message message);
+	 
 }

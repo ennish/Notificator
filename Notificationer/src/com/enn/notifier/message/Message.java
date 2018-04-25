@@ -1,37 +1,12 @@
 package com.enn.notifier.message;
 
-import com.enn.notifier.Receiver;
-
-/**
- * Message to notification,
- * include message content and message receivers
- * @author hacker
- *
- */
-public class Message{
+public abstract class Message {
 	
-	private String msgBody;//message body
-	private Receiver receivers;//message receivers
+	private String To = "";
+	private String From = "";
+	private String content = "";
 	
-	public Message(String msgBody, Receiver receivers) {
-		super();
-		this.msgBody = msgBody;
-		this.receivers = receivers;
-	}
+	//每种消息都须返回消息体
+	public abstract String getContent();
 
-	public String getMsgBody() {
-		return msgBody;
-	}
-
-	public void setMsgBody(String msgBody) {
-		this.msgBody = msgBody;
-	}
-
-	public Receiver getReceivers() {
-		return receivers;
-	}
-
-	public void setReceivers(Receiver receivers) {
-		this.receivers = receivers;
-	}
 }
