@@ -8,6 +8,6 @@ public class MailSender extends Sender{
 	public String send(Message msg) {
 		//To-do
 		
-		return null;
+		return "mail send："+msg.getContent();
 	}
 }
