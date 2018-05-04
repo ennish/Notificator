@@ -22,6 +22,7 @@ import org.quartz.impl.StdSchedulerFactory;
 
 import com.enn.quartz.jobs.DetailJob;
 import com.enn.quartz.jobs.HelloJob;
+import com.enn.quartz.jobs.StatefulJob;
 
 public class MainTest {
 	Calendar cal = Calendar.getInstance();
@@ -127,6 +128,17 @@ public class MainTest {
 		// scheduler.shutdown();
 	}
 
+	public void StateFulJobRun() throws SchedulerException {
+		SchedulerFactory sf = new StdSchedulerFactory();
+		Scheduler scheduler = sf.getScheduler();
+		CronTrigger trigger = (CronTrigger) newTrigger().withDescription("stateful job")
+				.withSchedule(cronSchedule("0/20 * * * * ?")).withIdentity("cronTrigger2", "group1").build();
+		JobDetail job = newJob(StatefulJob.class).withDescription("hellow job").withIdentity("job1", "group1").build();
+		scheduler.scheduleJob(job,trigger);
+		scheduler.start();
+		// scheduler.shutdown();
+	}
+
 	/**
 	 * 
 	 * @param args
@@ -140,6 +152,8 @@ public class MainTest {
 
 		// main.simpleTriggerRun();
 
-		main.cronTriggerRun();
+		// main.cronTriggerRun();
+		
+		main.StateFulJobRun();
 	}
 }
