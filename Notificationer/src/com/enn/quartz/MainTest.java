@@ -1,6 +1,5 @@
 package com.enn.quartz;
 
-import static org.quartz.DateBuilder.evenMinuteDate;
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.TriggerBuilder.newTrigger;
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
@@ -132,7 +131,7 @@ public class MainTest {
 		SchedulerFactory sf = new StdSchedulerFactory();
 		Scheduler scheduler = sf.getScheduler();
 		CronTrigger trigger = (CronTrigger) newTrigger().withDescription("stateful job")
-				.withSchedule(cronSchedule("0/20 * * * * ?")).withIdentity("cronTrigger2", "group1").build();
+				.withSchedule(cronSchedule("0/5 * * * * ?")).withIdentity("cronTrigger2", "group1").build();
 		JobDetail job = newJob(StatefulJob.class).withDescription("hellow job").withIdentity("job1", "group1").build();
 		scheduler.scheduleJob(job,trigger);
 		scheduler.start();

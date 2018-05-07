@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="src/quartz-2.2.3.jar" sourcepath="C:/Users/hacker/Downloads/quartz-2.2.3"/>
 	<classpathentry kind="lib" path="src/quartz-jobs-2.2.3.jar"/>
@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="slf4j-log4j12-1.7.7.jar"/>
 	<classpathentry kind="lib" path="log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="javax.mail (1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
